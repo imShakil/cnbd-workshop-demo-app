@@ -42,6 +42,68 @@ docker run hello-world
 
 For platform-specific instructions, visit [Docker Documentation](https://docs.docker.com/get-docker/).
 
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/cnbd-workshop-demo-app.git
+cd cnbd-workshop-demo-app
+```
+
+Replace `YOUR_USERNAME` with your GitHub username or the repository owner.
+
+### 2. Manual Docker Build (Before Automation)
+
+Before setting up the automated CI/CD pipeline, test the Docker build locally:
+
+**Build the Docker image:**
+```bash
+docker build -t devops-radar:local .
+```
+
+**Verify the build:**
+```bash
+docker images | grep devops-radar
+```
+
+You should see the `devops-radar:local` image in the list.
+
+### 3. Run the Container
+
+**Run the container on port 30999:**
+```bash
+docker run -d -p 30999:80 --name devops-skills-radar devops-radar:local
+```
+
+**Verify the container is running:**
+```bash
+docker ps | grep devops-skills-radar
+```
+
+**Access the application:**
+Open your browser and navigate to:
+```
+http://localhost:30999
+```
+
+**View container logs:**
+```bash
+docker logs devops-skills-radar
+```
+
+**Stop the container:**
+```bash
+docker stop devops-skills-radar
+```
+
+**Remove the container:**
+```bash
+docker rm devops-skills-radar
+```
+
+**Note:** The container runs Nginx on port 80 internally, which is mapped to port 30999 on your host machine.
+
 ## Project Structure
 
 ```
