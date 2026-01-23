@@ -2,6 +2,7 @@
 
 ## 📚 How to Find Documentation for Actions
 
+
 ### Method 1: GitHub Marketplace (Easiest)
 1. Go to [GitHub Marketplace](https://github.com/marketplace)
 2. Search for the action name (e.g., "docker login")
